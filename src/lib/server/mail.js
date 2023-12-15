@@ -20,8 +20,9 @@ export const sendMail = async ({ from, html, subject, text, to }) => {
   };
 
   process.env.NODE_ENV === 'production'
+  // process.env.NODE_ENV === 'development'
     ? await transporter.sendMail(data)
-    : console.log(data);
+    : console.log(response.error);
 };
 
 export default transporter;
